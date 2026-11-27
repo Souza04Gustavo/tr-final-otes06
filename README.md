@@ -4,7 +4,7 @@ Projeto final da disciplina **OTES06 – Desenvolvimento Mobile** da Universidad
 
 **Casa em Dia** é um aplicativo Android para manter a casa em dia. Em um só lugar, o usuário controla **contas a pagar**, **manutenções**, **lembretes gerais** e a **lista de compras**, e acompanha os **gastos** mês a mês. Cada pessoa cria a sua conta, que representa a sua casa, e o app avisa quando há algo vencendo ou atrasado.
 
-> **Vídeo de demonstração:** [`otes-guia-video-final.mp4`](otes-guia-video-final.mp4), na raiz do repositório ([baixar o vídeo](https://github.com/Souza04Gustavo/tr-final-otes06/raw/main/otes-guia-video-final.mp4)). Como o arquivo é grande (≈ 51 MB), o GitHub não o reproduz na página: use o link de download ou o botão *View raw* e assista no player do computador.
+> **Vídeo de demonstração:** [`otes-guia-video-final.mp4`](otes-guia-video-final.mp4), na raiz do repositório ([baixar o vídeo](https://github.com/Souza04Gustavo/tr-final-otes06/raw/main/otes-guia-video-final.mp4), ≈ 51 MB). Se o GitHub não reproduzir o vídeo na própria página, use o link de download e assista no player do computador.
 >
 > **Desenvolvido e testado no Windows 11** (PowerShell + Android Studio + emulador Android 17). O passo a passo com todos os comandos para executar está em [Como executar](#como-executar).
 
@@ -17,6 +17,7 @@ Projeto final da disciplina **OTES06 – Desenvolvimento Mobile** da Universidad
 | Back-end em **Java** | Java 21 + Spring Boot 4.1 ([detalhes](docs/02-arquitetura.md#23-back-end)) |
 | Comunicação **REST** | 18 endpoints JSON com autenticação JWT ([contrato completo](docs/03-api.md)) |
 | Organização do código e boas práticas | Camadas e pacotes por funcionalidade, DTOs, validação, erros padronizados e 46 testes automatizados (seção [Arquitetura e boas práticas](#arquitetura-e-boas-práticas)) |
+| Código disponível no GitHub | Este repositório: app em [`app/`](app/), API em [`backend/`](backend/) |
 | Documentação funcional e de build/execução | Este README ([como usar](#como-usar-o-app) e [como executar](#como-executar), com os comandos de cada passo) e a pasta [`docs/`](docs/) |
 | Vídeo de demonstração | [`otes-guia-video-final.mp4`](otes-guia-video-final.mp4), na raiz do repositório (link também no topo desta página) |
 
@@ -39,7 +40,7 @@ Projeto final da disciplina **OTES06 – Desenvolvimento Mobile** da Universidad
 | Tela | O que se faz nela |
 |---|---|
 | **Login / Cadastro** | Criar a conta (nome, nome da casa, e-mail e senha) ou entrar. A sessão continua ativa entre aberturas do app. |
-| **Painel** (aba inicial) | Ver de relance os atrasados, o que vence hoje, as contas do mês e os próximos 7 dias. Tocar em "Contas do mês" abre a análise de gastos. |
+| **Painel** (aba inicial) | Ver de relance os atrasados, o que vence hoje, as contas do mês e os próximos 7 dias. Tocar no cartão "Contas de [mês]" (ex.: "Contas de novembro") abre a análise de gastos. |
 | **Lembretes** | Filtrar por categoria e por pendentes ou concluídos, buscar por texto e concluir pela caixa à direita. O botão **+** cria um lembrete e tocar em um item abre a edição. |
 | **Formulário de lembrete** | Título, categoria, data, valor (obrigatório para contas), repetição ("a cada N dias" para manutenções periódicas) e observação. |
 | **Gastos** | Trocar de mês pelas setas ou tocando nas colunas do gráfico; ver total, pago, pendente, categorias e maiores gastos. |
@@ -95,7 +96,8 @@ tr-final-otes06/
 ├── settings.gradle.kts
 ├── backend/              API REST em Spring Boot (projeto Maven independente)
 ├── docs/                 Documentação do projeto
-└── otes-guia-video-final.mp4   Vídeo de demonstração
+├── otes-guia-video-final.mp4   Vídeo de demonstração
+└── LICENSE               Licença MIT
 ```
 
 ## Documentação
@@ -126,7 +128,7 @@ tr-final-otes06/
 
 1. **Git**, para clonar o repositório.
 2. **Android Studio** recente, com o **Android SDK 37** instalado (o Android Studio oferece instalar na primeira abertura do projeto) e um **emulador** criado em *Device Manager* (qualquer Android 8.0/API 26 ou superior; foi usado o "Medium Phone" com API 37).
-3. **Java:** não é preciso instalar à parte. O **JDK que vem com o Android Studio** (versão 25) serve para o back-end e para o app.
+3. **Java:** não é preciso instalar à parte. O **JDK que vem com o Android Studio** (versão 25) serve para o back-end e para o app. O back-end aceita qualquer JDK 21 ou superior; se o JDK do seu Android Studio for mais antigo que o 25, o Gradle baixa sozinho o JDK 25 na primeira compilação do app.
 4. **Conexão com a internet** na primeira execução: os *wrappers* baixam o Maven, o Gradle e as dependências sozinhos. O Maven e o Gradle **não** precisam estar instalados.
 
 Se o Android Studio foi instalado em outra pasta, troque `C:\Program Files\Android\Android Studio` pelo caminho correto nos comandos abaixo. O SDK fica, por padrão, em `%LOCALAPPDATA%\Android\Sdk`.
