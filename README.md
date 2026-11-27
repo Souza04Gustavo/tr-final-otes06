@@ -4,9 +4,9 @@ Projeto final da disciplina **OTES06 – Desenvolvimento Mobile** da Universidad
 
 **Casa em Dia** é um aplicativo Android para manter a casa em dia. Em um só lugar, o usuário controla **contas a pagar**, **manutenções**, **lembretes gerais** e a **lista de compras**, e acompanha os **gastos** mês a mês. Cada pessoa cria a sua conta, que representa a sua casa, e o app avisa quando há algo vencendo ou atrasado.
 
-> 🎥 **Vídeo de demonstração:** [`otes-guia-video-final.mp4`](otes-guia-video-final.mp4), na raiz do repositório ([baixar o vídeo](https://github.com/Souza04Gustavo/tr-final-otes06/raw/main/otes-guia-video-final.mp4)). Como o arquivo é grande (≈ 51 MB), o GitHub não o reproduz na página: use o link de download ou o botão *View raw* e assista no player do computador.
+> **Vídeo de demonstração:** [`otes-guia-video-final.mp4`](otes-guia-video-final.mp4), na raiz do repositório ([baixar o vídeo](https://github.com/Souza04Gustavo/tr-final-otes06/raw/main/otes-guia-video-final.mp4)). Como o arquivo é grande (≈ 51 MB), o GitHub não o reproduz na página: use o link de download ou o botão *View raw* e assista no player do computador.
 >
-> 💻 **Desenvolvido e testado no Windows 11** (PowerShell + Android Studio + emulador Android 17). O passo a passo com todos os comandos para executar está em [Como executar](#como-executar).
+> **Desenvolvido e testado no Windows 11** (PowerShell + Android Studio + emulador Android 17). O passo a passo com todos os comandos para executar está em [Como executar](#como-executar).
 
 ## Atendimento aos requisitos do trabalho
 
@@ -44,7 +44,7 @@ Projeto final da disciplina **OTES06 – Desenvolvimento Mobile** da Universidad
 | **Formulário de lembrete** | Título, categoria, data, valor (obrigatório para contas), repetição ("a cada N dias" para manutenções periódicas) e observação. |
 | **Gastos** | Trocar de mês pelas setas ou tocando nas colunas do gráfico; ver total, pago, pendente, categorias e maiores gastos. |
 | **Compras** | Adicionar um item com quantidade, marcar como comprado, segurar o dedo sobre o item para editar ou excluir, e "Limpar comprados". |
-| **Menu ⋮** | "Verificar lembretes agora" (dispara a notificação na hora) e "Sair". |
+| **Menu de opções (três pontos, no canto superior direito)** | "Verificar lembretes agora" (dispara a notificação na hora) e "Sair". |
 
 As regras de negócio (recorrência, atraso, resumo do mês etc.) estão em [docs/01-especificacao.md](docs/01-especificacao.md#15-regras-de-negócio).
 
@@ -59,20 +59,13 @@ As regras de negócio (recorrência, atraso, resumo do mês etc.) estão em [doc
 
 ## Arquitetura e boas práticas
 
-```mermaid
-flowchart LR
-    subgraph App[App Android - MVVM]
-        V[Activity / Fragment] --> VM[ViewModel + LiveData]
-        VM --> R[Repository]
-        R --> API[Retrofit + OkHttp]
-    end
-    API -- "REST / JSON + JWT" --> C
-    subgraph Back[Back-end Spring Boot]
-        C[Controller] --> S[Service - regras de negócio]
-        S --> J[Repository - Spring Data JPA]
-    end
-    J --> DB[(H2 em arquivo)]
-```
+O sistema tem duas partes, que conversam por REST:
+
+- **App Android (MVVM):** a tela (Activity ou Fragment) observa o ViewModel por meio de `LiveData`; o ViewModel pede os dados ao Repository; o Repository faz as requisições HTTP com Retrofit e OkHttp.
+- **Comunicação:** requisições REST com JSON, autenticadas pelo token JWT enviado no cabeçalho `Authorization: Bearer`.
+- **Back-end (Spring Boot):** o Controller recebe a requisição e valida os dados; o Service aplica as regras de negócio; o Repository (Spring Data JPA) lê e grava no banco H2 em arquivo.
+
+Caminho de uma requisição: Tela → ViewModel → Repository → Retrofit/OkHttp → (HTTP + JSON + JWT) → Controller → Service → Repository JPA → H2.
 
 **Back-end**
 - Organização **por funcionalidade** (`auth`, `usuario`, `lembrete`, `compra`, `painel`, `analise`), cada uma com controller → service → repository.
@@ -118,7 +111,7 @@ tr-final-otes06/
 
 ## Como executar
 
-> 💻 **O projeto foi desenvolvido e testado no Windows 11**, e todos os comandos abaixo são para o **PowerShell** do Windows (Menu Iniciar › "PowerShell"). Quem usa Linux ou macOS encontra os equivalentes em [Comandos no Linux/macOS](#comandos-no-linuxmacos).
+> **O projeto foi desenvolvido e testado no Windows 11**, e todos os comandos abaixo são para o **PowerShell** do Windows (Menu Iniciar › "PowerShell"). Quem usa Linux ou macOS encontra os equivalentes em [Comandos no Linux/macOS](#comandos-no-linuxmacos).
 
 ### Ambiente usado no desenvolvimento
 
@@ -197,7 +190,7 @@ Com o back-end rodando, escolha **uma** das opções.
 1. *File › Open* e selecione a **pasta raiz do repositório** (`tr-final-otes06`, e não a pasta `app` nem a `backend`).
 2. Aguarde a sincronização do Gradle (barra inferior). Se o Android Studio pedir para instalar o SDK 37, aceite.
 3. Em *Device Manager*, ligue um emulador (ou crie um: *Create Virtual Device* › "Medium Phone" › API 37).
-4. Selecione a configuração **app** e clique em **Run ▶** (`Shift + F10`).
+4. Selecione a configuração **app** e clique em **Run** (`Shift + F10`).
 
 #### Opção B: pelo terminal (terminal 2)
 
@@ -284,7 +277,7 @@ O projeto foi feito no Windows, mas os *wrappers* também funcionam em Linux e m
 | `adb` ou `emulator` não é reconhecido | Faltou a linha do `$env:Path` do passo 2. |
 | "System UI isn't responding" no emulador logo após ligar | Comum no primeiro boot do emulador. Toque em **Wait**. |
 | Erro de `jlink` ao compilar pelo terminal | O Gradle escolheu um Java incompleto (por exemplo, o embutido em extensões do VS Code). Rode `.\gradlew.bat --stop` e depois `.\gradlew.bat installDebug "-Dorg.gradle.java.installations.auto-detect=false" "-Dorg.gradle.java.installations.paths=C:/Program Files/Android/Android Studio/jbr"`, ou compile pelo Android Studio. |
-| A notificação não aparece | A permissão de notificações foi negada. Ative-a nas configurações do app e use o menu ⋮ › "Verificar lembretes agora". |
+| A notificação não aparece | A permissão de notificações foi negada. Ative-a nas configurações do app e use o menu de opções (três pontos) › "Verificar lembretes agora". |
 
 ## Autor
 
