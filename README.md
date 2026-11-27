@@ -79,7 +79,7 @@ Caminho de uma requisição: Tela → ViewModel → Repository → Retrofit/OkHt
 - **MVVM**: as telas só observam o `LiveData` do ViewModel; o ViewModel fala com os repositories, que encapsulam o Retrofit.
 - Estado de carregamento, sucesso e erro padronizado (`Resource<T>`) e mensagens de uso único (`Evento<T>`), para não se repetirem ao girar a tela.
 - Proteção contra envio duplicado (toques repetidos), expiração de sessão tratada no `AuthInterceptor` (401 → volta ao login) e textos em `strings.xml` com plurais.
-- Identidade visual com cores e cantos em tokens, cores validadas para contraste e daltonismo ([docs/05-identidade-visual.md](docs/05-identidade-visual.md)).
+- Identidade visual com cores e cantos em tokens, cores validadas para contraste e daltonismo ([docs/04-identidade-visual.md](docs/04-identidade-visual.md)).
 
 **Testes automatizados (46)**
 - **Back-end (30):** recorrência, regras dos lembretes (incluindo desfazer), painel, análise de gastos e testes de integração da API com MockMvc e H2 em memória.
@@ -105,9 +105,7 @@ tr-final-otes06/
 | [01 – Especificação funcional](docs/01-especificacao.md) | Escopo, requisitos, regras de negócio, telas |
 | [02 – Arquitetura](docs/02-arquitetura.md) | Stack, camadas, pacotes, modelo de dados, segurança, testes, decisões |
 | [03 – Contrato da API](docs/03-api.md) | Os 18 endpoints REST com exemplos |
-| [04 – Plano de implementação](docs/04-plano-implementacao.md) | Etapas, cronograma e checklist de entrega |
-| [05 – Identidade visual](docs/05-identidade-visual.md) | Cores, cantos, tipografia e padrão dos componentes |
-| [06 – Roteiro do vídeo](docs/06-roteiro-video.md) | Plano da gravação da demonstração |
+| [04 – Identidade visual](docs/04-identidade-visual.md) | Cores, cantos, tipografia e padrão dos componentes |
 
 ## Como executar
 

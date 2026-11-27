@@ -385,7 +385,7 @@ flowchart LR
 | D15 | "Desfazer conclusão" com rota `reabrir` e coluna `origem_id` | Adiar a chamada à API até a Snackbar sumir | A conclusão é gravada na hora (não se perde se o app fechar) e o servidor sabe exatamente qual ocorrência remover. |
 | D16 | Busca de lembretes feita no app, sobre a lista já carregada | Parâmetro de busca na API | Responde a cada letra digitada sem novas requisições; a lista de um usuário é pequena. |
 | D17 | Cor de `OUTRO` trocada de roxo para verde-azulado | Manter as cores dos mockups | O roxo ficava quase igual ao azul de `CONTA` (ΔE 7,8 em visão normal e 3,2 com deuteranopia). As três cores atuais passam na validação de daltonismo e contraste. |
-| D18 | Identidade visual própria em azul-anil, com cantos de 2/4/6 dp e cores como tokens por função ([05-identidade-visual.md](05-identidade-visual.md)) | Verde e cantos arredondados dos mockups iniciais / tema Material padrão | Visual mais sóbrio e coerente; nomes por função (`primaria`, `pendente`) permitem trocar a paleta sem mexer nos layouts. Os mockups iniciais ficaram como referência de layout, não de cor. |
+| D18 | Identidade visual própria em azul-anil, com cantos de 2/4/6 dp e cores como tokens por função ([04-identidade-visual.md](04-identidade-visual.md)) | Verde e cantos arredondados dos mockups iniciais / tema Material padrão | Visual mais sóbrio e coerente; nomes por função (`primaria`, `pendente`) permitem trocar a paleta sem mexer nos layouts. Os mockups iniciais ficaram como referência de layout, não de cor. |
 
 ### Testes do app
 

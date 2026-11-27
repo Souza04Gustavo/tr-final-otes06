@@ -1,4 +1,4 @@
-# 5. Identidade visual — Casa em Dia
+# 4. Identidade visual — Casa em Dia
 
 Padrão visual do app: **azul-anil em vários tons, superfícies claras e frias, cantos levemente retos e tipografia sóbria**. Este guia vale para toda tela ou componente novo.
 
@@ -7,16 +7,16 @@ Arquivos de referência:
 - Cantos: [`values/dimens.xml`](../app/src/main/res/values/dimens.xml).
 - Tema e estilos: [`values/themes.xml`](../app/src/main/res/values/themes.xml).
 
-## 5.1 Princípios
+## 4.1 Princípios
 
 1. **Azul é a marca.** O app é predominantemente azul. Outras cores aparecem só com uma função clara: status (atrasado, pendente, queda de gasto) ou identificação de categoria.
-2. **Cantos levemente retos.** Nada de pílulas nem cantos de 16 a 28 dp. Há só três tamanhos de canto (seção 5.3).
+2. **Cantos levemente retos.** Nada de pílulas nem cantos de 16 a 28 dp. Há só três tamanhos de canto (seção 4.3).
 3. **Limpo.** Cartões brancos com borda fina de 1 dp e **sem sombra**. Fundo azul muito claro. Pouca decoração.
 4. **Peso médio em vez de negrito.** Títulos, valores e botões usam `sans-serif-medium`. Os títulos de seção usam caixa alta pequena com espaçamento entre letras.
 5. **A cor nunca é a única pista.** Todo status também tem texto ou ícone: "Atrasado há 3 dias", setas ▲/▼, nome da categoria escrito ao lado do filete colorido.
 6. **Sem ícone em quadrado pastel.** A categoria de um lembrete é mostrada por um filete na borda e pelo nome escrito, não por um ícone dentro de um fundo colorido claro.
 
-## 5.2 Cores (tokens por função)
+## 4.2 Cores (tokens por função)
 
 Os layouts usam o **nome da função** (`@color/primaria`, `@color/texto`...), nunca o nome do tom. Para mudar a paleta, basta mudar o `colors.xml`.
 
@@ -54,7 +54,7 @@ Os layouts usam o **nome da função** (`@color/primaria`, `@color/texto`...), n
 - **Contraste de texto (WCAG):** todos os pares de texto e fundo têm no mínimo 4,5:1. Por exemplo: `texto` sobre `fundo` dá 16,1:1; `primaria` sobre branco, 8,7:1; `pendente` sobre branco, 5,6:1.
 - **Categorias:** as três cores passam na checagem de daltonismo (protanopia e deuteranopia, ΔE ≥ 8), na de distância em visão normal (ΔE ≥ 15) e na de contraste ≥ 3:1. O verde-azulado de "Outro" foi mantido porque um ciano mais próximo do azul da marca reprovaria na distância em visão normal.
 
-## 5.3 Cantos
+## 4.3 Cantos
 
 | Token | Valor | Onde |
 |---|---|---|
@@ -64,7 +64,7 @@ Os layouts usam o **nome da função** (`@color/primaria`, `@color/texto`...), n
 
 O tema mapeia a escala de formas do Material 3 (`shapeAppearanceCorner*`) para esses três tamanhos. Assim, componentes novos já nascem no padrão.
 
-## 5.4 Tipografia
+## 4.4 Tipografia
 
 Fonte do sistema (Roboto), em dois pesos: regular (400) e médio (500).
 
@@ -77,7 +77,7 @@ Fonte do sistema (Roboto), em dois pesos: regular (400) e médio (500).
 | `TextAppearance.Casaemdia.RotuloCategoria` | 11 sp, médio, CAIXA ALTA, espaçamento 0,08, cor `texto_rotulo` | Nome da categoria no item de lembrete ("CONTA") |
 | Valores em destaque | 32–36 sp, médio | Total do mês, contadores do Painel |
 
-## 5.5 Componentes
+## 4.5 Componentes
 
 | Componente | Padrão |
 |---|---|
@@ -92,7 +92,7 @@ Fonte do sistema (Roboto), em dois pesos: regular (400) e médio (500).
 | Snackbar | 4 dp, fundo `superficie_inversa`, ação "Desfazer" em `primaria_sobre_escuro` |
 | Gráficos | Mês em destaque em `primaria` e demais em `grafico_contexto`; ranking numa só cor (`primaria`); divisão por categoria com as cores das categorias e vão de 2 dp entre as partes |
 
-## 5.6 O que evitar
+## 4.6 O que evitar
 
 - Cantos grandes, pílulas e círculos decorativos (botões, indicadores, caixas de seleção).
 - Ícone dentro de quadrado pastel e selos coloridos ("chips" de status). Prefira filete + texto.
