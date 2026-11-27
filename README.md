@@ -4,7 +4,7 @@ Projeto final da disciplina **OTES06 – Desenvolvimento Mobile** da Universidad
 
 **Casa em Dia** é um aplicativo Android para manter a casa em dia. Em um só lugar, o usuário controla **contas a pagar**, **manutenções**, **lembretes gerais** e a **lista de compras**, e acompanha os **gastos** mês a mês. Cada pessoa cria a sua conta, que representa a sua casa, e o app avisa quando há algo vencendo ou atrasado.
 
-> 🎥 **Vídeo de demonstração:** _(link a ser adicionado)_
+> 🎥 **Vídeo de demonstração:** [`otes-guia-video-final.mp4`](otes-guia-video-final.mp4), na raiz do repositório ([baixar o vídeo](https://github.com/Souza04Gustavo/tr-final-otes06/raw/main/otes-guia-video-final.mp4)). Como o arquivo é grande (≈ 51 MB), o GitHub não o reproduz na página: use o link de download ou o botão *View raw* e assista no player do computador.
 >
 > 💻 **Desenvolvido e testado no Windows 11** (PowerShell + Android Studio + emulador Android 17). O passo a passo com todos os comandos para executar está em [Como executar](#como-executar).
 
@@ -18,7 +18,7 @@ Projeto final da disciplina **OTES06 – Desenvolvimento Mobile** da Universidad
 | Comunicação **REST** | 18 endpoints JSON com autenticação JWT ([contrato completo](docs/03-api.md)) |
 | Organização do código e boas práticas | Camadas e pacotes por funcionalidade, DTOs, validação, erros padronizados e 46 testes automatizados (seção [Arquitetura e boas práticas](#arquitetura-e-boas-práticas)) |
 | Documentação funcional e de build/execução | Este README ([como usar](#como-usar-o-app) e [como executar](#como-executar), com os comandos de cada passo) e a pasta [`docs/`](docs/) |
-| Vídeo de demonstração | Link no topo desta página |
+| Vídeo de demonstração | [`otes-guia-video-final.mp4`](otes-guia-video-final.mp4), na raiz do repositório (link também no topo desta página) |
 
 ## Funcionalidades
 
@@ -101,7 +101,8 @@ tr-final-otes06/
 ├── build.gradle.kts      Build do projeto Android (a raiz é o projeto do Android Studio)
 ├── settings.gradle.kts
 ├── backend/              API REST em Spring Boot (projeto Maven independente)
-└── docs/                 Documentação do projeto
+├── docs/                 Documentação do projeto
+└── otes-guia-video-final.mp4   Vídeo de demonstração
 ```
 
 ## Documentação

@@ -89,7 +89,7 @@ O plano completo da gravação está em [06-roteiro-video.md](06-roteiro-video.m
 - [ ] Conferir abrindo a raiz do repositório no Android Studio e rodando com **Run ▶**
 - [x] README com: atendimento aos requisitos, descrição funcional, como usar, stack, arquitetura e boas práticas, pré-requisitos, build, execução, testes e problemas comuns
 - [x] Nenhum arquivo sensível ou gerado no repositório (`data/`, `build/`, `target/`, `local.properties`, `.idea/` estão no `.gitignore`)
-- [ ] Vídeo gravado e publicado com link acessível sem login
-- [ ] Link do vídeo no README
-- [ ] Commit e push final no GitHub
+- [x] Vídeo gravado e versionado na raiz do repositório (`otes-guia-video-final.mp4`)
+- [x] Link do vídeo no README
+- [x] Commit e push final no GitHub
 - [ ] Link do GitHub enviado no Moodle
