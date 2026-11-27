@@ -1,0 +1,208 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!--
+        Tema do Casa em Dia: azul-anil, superfícies claras e frias, cantos levemente retos.
+        Cores: values/colors.xml (tokens por função). Cantos: values/dimens.xml (2, 4 e 6 dp).
+    -->
+    <style name="Base.Theme.Casaemdia" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Cores -->
+        <item name="colorPrimary">@color/primaria</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/primaria_container</item>
+        <item name="colorOnPrimaryContainer">@color/primaria_escura</item>
+        <item name="colorPrimaryInverse">@color/primaria_sobre_escuro</item>
+        <item name="colorSecondary">@color/azul_600</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">@color/primaria_container</item>
+        <item name="colorOnSecondaryContainer">@color/primaria_escura</item>
+        <item name="colorTertiary">@color/azul_500</item>
+        <item name="colorError">@color/erro</item>
+        <item name="colorErrorContainer">@color/erro_container</item>
+        <item name="colorOnErrorContainer">@color/erro_escuro</item>
+        <item name="android:colorBackground">@color/fundo</item>
+        <item name="colorSurface">@color/fundo</item>
+        <item name="colorSurfaceContainerLowest">@color/superficie</item>
+        <item name="colorSurfaceContainerLow">@color/superficie</item>
+        <item name="colorSurfaceContainer">@color/superficie</item>
+        <item name="colorSurfaceContainerHigh">@color/superficie</item>
+        <item name="colorSurfaceContainerHighest">@color/chip_quantidade</item>
+        <item name="colorSurfaceInverse">@color/superficie_inversa</item>
+        <item name="colorOnSurfaceInverse">@color/azul_100</item>
+        <item name="colorOnSurface">@color/texto</item>
+        <item name="colorOnSurfaceVariant">@color/texto_secundario</item>
+        <item name="colorOutline">@color/contorno</item>
+        <item name="colorOutlineVariant">@color/contorno_suave</item>
+        <item name="android:windowBackground">@color/fundo</item>
+
+        <!-- Escala de cantos aplicada a todos os componentes do Material 3 -->
+        <item name="shapeAppearanceCornerExtraSmall">@style/ShapeAppearance.Casaemdia.Pequeno</item>
+        <item name="shapeAppearanceCornerSmall">@style/ShapeAppearance.Casaemdia.Medio</item>
+        <item name="shapeAppearanceCornerMedium">@style/ShapeAppearance.Casaemdia.Medio</item>
+        <item name="shapeAppearanceCornerLarge">@style/ShapeAppearance.Casaemdia.Grande</item>
+        <item name="shapeAppearanceCornerExtraLarge">@style/ShapeAppearance.Casaemdia.Grande</item>
+
+        <!-- Componentes -->
+        <item name="textInputStyle">@style/Widget.Casaemdia.TextInputLayout</item>
+        <item name="materialCardViewStyle">@style/Widget.Casaemdia.Card</item>
+        <item name="toolbarStyle">@style/Widget.Casaemdia.Toolbar</item>
+        <item name="materialButtonStyle">@style/Widget.Casaemdia.Button</item>
+        <item name="materialButtonOutlinedStyle">@style/Widget.Casaemdia.Button.Contorno</item>
+        <item name="floatingActionButtonStyle">@style/Widget.Casaemdia.BotaoFlutuante</item>
+        <item name="bottomNavigationStyle">@style/Widget.Casaemdia.NavegacaoInferior</item>
+        <item name="snackbarStyle">@style/Widget.Casaemdia.Snackbar</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.Casaemdia.Dialogo</item>
+    </style>
+
+    <style name="Theme.Casaemdia" parent="Base.Theme.Casaemdia" />
+
+    <!-- Formas -->
+    <style name="ShapeAppearance.Casaemdia.Pequeno" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/canto_pequeno</item>
+    </style>
+
+    <style name="ShapeAppearance.Casaemdia.Medio" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/canto_medio</item>
+    </style>
+
+    <style name="ShapeAppearance.Casaemdia.Grande" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/canto_grande</item>
+    </style>
+
+    <!-- Campos de texto contornados -->
+    <style name="Widget.Casaemdia.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">@dimen/canto_medio</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/canto_medio</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/canto_medio</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/canto_medio</item>
+        <item name="boxBackgroundColor">@color/superficie</item>
+        <item name="boxStrokeColor">@color/primaria</item>
+    </style>
+
+    <style name="Widget.Casaemdia.TextInputLayout.Dropdown" parent="Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="boxCornerRadiusTopStart">@dimen/canto_medio</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/canto_medio</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/canto_medio</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/canto_medio</item>
+        <item name="boxBackgroundColor">@color/superficie</item>
+        <item name="boxStrokeColor">@color/primaria</item>
+    </style>
+
+    <!-- Cartões brancos, sem sombra, com borda fina -->
+    <style name="Widget.Casaemdia.Card" parent="Widget.Material3.CardView.Outlined">
+        <item name="cardBackgroundColor">@color/superficie</item>
+        <item name="strokeColor">@color/contorno_suave</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="cardCornerRadius">@dimen/canto_grande</item>
+        <item name="cardElevation">0dp</item>
+    </style>
+
+    <style name="Widget.Casaemdia.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="titleTextAppearance">@style/TextAppearance.Casaemdia.TituloTela</item>
+        <item name="subtitleTextAppearance">@style/TextAppearance.Casaemdia.Subtitulo</item>
+    </style>
+
+    <!-- Botões retangulares (cantos de 4dp) -->
+    <style name="Widget.Casaemdia.Button" parent="Widget.Material3.Button">
+        <item name="android:minHeight">48dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:textFontWeight" tools:targetApi="p">500</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Casaemdia.Medio</item>
+    </style>
+
+    <style name="Widget.Casaemdia.Button.Contorno" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:textFontWeight" tools:targetApi="p">500</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Casaemdia.Medio</item>
+        <item name="strokeColor">@color/contorno_suave</item>
+    </style>
+
+    <style name="Widget.Casaemdia.Button.Excluir" parent="Widget.Casaemdia.Button.Contorno">
+        <item name="android:minHeight">48dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/erro</item>
+        <item name="iconTint">@color/erro</item>
+        <item name="strokeColor">@color/erro_contorno</item>
+    </style>
+
+    <style name="Widget.Casaemdia.BotaoIcone" parent="Widget.Material3.Button.IconButton.Filled">
+        <item name="shapeAppearance">@style/ShapeAppearance.Casaemdia.Medio</item>
+    </style>
+
+    <style name="Widget.Casaemdia.BotaoFlutuante" parent="Widget.Material3.FloatingActionButton.Primary">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.Casaemdia.Grande</item>
+        <item name="backgroundTint">@color/primaria</item>
+        <item name="tint">@color/white</item>
+    </style>
+
+    <style name="Widget.Casaemdia.Chip.Filtro" parent="Widget.Material3.Chip.Filter">
+        <item name="shapeAppearance">@style/ShapeAppearance.Casaemdia.Medio</item>
+        <item name="chipStrokeColor">@color/contorno_suave</item>
+    </style>
+
+    <!-- Navegação inferior: indicador da aba ativa retangular, não em pílula -->
+    <style name="Widget.Casaemdia.NavegacaoInferior" parent="Widget.Material3.BottomNavigationView">
+        <item name="itemActiveIndicatorStyle">@style/Widget.Casaemdia.IndicadorAtivo</item>
+    </style>
+
+    <style name="Widget.Casaemdia.IndicadorAtivo" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="shapeAppearance">@style/ShapeAppearance.Casaemdia.Medio</item>
+        <item name="android:color">@color/primaria_container</item>
+    </style>
+
+    <style name="Widget.Casaemdia.Snackbar" parent="Widget.Material3.Snackbar">
+        <item name="shapeAppearance">@style/ShapeAppearance.Casaemdia.Medio</item>
+    </style>
+
+    <style name="ThemeOverlay.Casaemdia.Dialogo" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.Casaemdia.Grande</item>
+        <item name="colorSurfaceContainerHigh">@color/superficie</item>
+    </style>
+
+    <!-- Tipografia: pesos médios em vez de negrito; títulos de seção em caixa alta pequena -->
+    <style name="TextAppearance.Casaemdia.TituloTela" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textSize">21sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:textFontWeight" tools:targetApi="p">500</item>
+        <item name="android:letterSpacing">-0.005</item>
+        <item name="android:textColor">@color/texto</item>
+    </style>
+
+    <style name="TextAppearance.Casaemdia.Subtitulo" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/texto_secundario</item>
+    </style>
+
+    <style name="TextAppearance.Casaemdia.Secao" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:textFontWeight" tools:targetApi="p">500</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.08</item>
+        <item name="android:textColor">@color/texto_rotulo</item>
+    </style>
+
+    <style name="TextAppearance.Casaemdia.Rotulo" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/texto_rotulo</item>
+    </style>
+
+    <!-- Nome da categoria no item de lembrete (a cor da categoria fica no filete, não no texto) -->
+    <style name="TextAppearance.Casaemdia.RotuloCategoria" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:textSize">11sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:textFontWeight" tools:targetApi="p">500</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.08</item>
+        <item name="android:textColor">@color/texto_rotulo</item>
+    </style>
+</resources>

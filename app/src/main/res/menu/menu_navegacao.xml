@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/painelFragment"
+        android:icon="@drawable/ic_casa"
+        android:title="@string/menu_painel" />
+    <item
+        android:id="@+id/lembretesFragment"
+        android:icon="@drawable/ic_lembretes"
+        android:title="@string/menu_lembretes" />
+    <item
+        android:id="@+id/gastosFragment"
+        android:icon="@drawable/ic_grafico"
+        android:title="@string/menu_gastos" />
+    <item
+        android:id="@+id/comprasFragment"
+        android:icon="@drawable/ic_carrinho"
+        android:title="@string/menu_compras" />
+</menu>

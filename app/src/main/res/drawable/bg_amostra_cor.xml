@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Amostra de cor da legenda dos gráficos; a cor vem do backgroundTint. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <corners android:radius="@dimen/canto_pequeno" />
+    <solid android:color="@android:color/white" />
+</shape>

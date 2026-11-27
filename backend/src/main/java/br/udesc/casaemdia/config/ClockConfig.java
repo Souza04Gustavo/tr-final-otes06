@@ -1,0 +1,22 @@
+package br.udesc.casaemdia.config;
+
+import java.time.Clock;
+import java.time.ZoneId;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+/**
+ * Fornece o relógio da aplicação. Os services usam {@code LocalDate.now(clock)}
+ * em vez de {@code LocalDate.now()}, o que permite fixar a data nos testes (RN13).
+ */
+@Configuration
+public class ClockConfig {
+
+    public static final ZoneId FUSO_PADRAO = ZoneId.of("America/Sao_Paulo");
+
+    @Bean
+    public Clock clock() {
+        return Clock.system(FUSO_PADRAO);
+    }
+}

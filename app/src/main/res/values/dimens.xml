@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Cantos levemente retos: a mesma escala em todo o app. -->
+<resources>
+    <!-- Barras de dados, selos -->
+    <dimen name="canto_pequeno">2dp</dimen>
+    <!-- Botões, campos, chips, ícones de categoria -->
+    <dimen name="canto_medio">4dp</dimen>
+    <!-- Cartões, diálogos, botão flutuante -->
+    <dimen name="canto_grande">6dp</dimen>
+
+    <!-- Margem à direita do valor no item de lembrete, com e sem a caixa de concluir ao lado -->
+    <dimen name="margem_valor_com_acao">4dp</dimen>
+    <dimen name="margem_valor_sem_acao">16dp</dimen>
+</resources>

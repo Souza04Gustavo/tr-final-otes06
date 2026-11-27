@@ -1,0 +1,181 @@
+<resources>
+    <string name="app_name">Casa em Dia</string>
+
+    <!-- Geral -->
+    <string name="acao_voltar">Voltar</string>
+    <string name="acao_salvar">Salvar</string>
+    <string name="acao_excluir">Excluir</string>
+    <string name="acao_editar">Editar</string>
+    <string name="acao_cancelar">Cancelar</string>
+    <string name="acao_tentar_novamente">Tentar novamente</string>
+    <string name="acao_desfazer">Desfazer</string>
+    <string name="erro_campo_obrigatorio">Campo obrigatório</string>
+
+    <!-- Login e cadastro -->
+    <string name="login_subtitulo">Contas, manutenções e compras da sua casa em um só lugar.</string>
+    <string name="campo_email">E-mail</string>
+    <string name="campo_senha">Senha</string>
+    <string name="campo_nome">Seu nome</string>
+    <string name="campo_nome_casa">Nome da casa</string>
+    <string name="ajuda_nome_casa">Aparece no topo do painel.</string>
+    <string name="ajuda_senha">Mínimo de 6 caracteres.</string>
+    <string name="acao_entrar">Entrar</string>
+    <string name="acao_criar_conta">Criar conta</string>
+    <string name="acao_cadastrar">Cadastrar</string>
+    <string name="login_sem_conta">Não tem conta?</string>
+    <string name="cadastro_com_conta">Já tem conta?</string>
+    <string name="cadastro_titulo">Criar conta</string>
+    <string name="cadastro_subtitulo">Cadastre-se e comece a organizar a sua casa.</string>
+    <string name="erro_email_invalido">Informe um e-mail válido</string>
+    <string name="erro_senha_curta">A senha precisa ter pelo menos 6 caracteres</string>
+    <string name="rede_local_negada">Sem a permissão de rede local o app não consegue falar com o servidor. Ative em Configurações › Apps › Casa em Dia › Permissões.</string>
+
+    <!-- Navegação principal -->
+    <string name="menu_painel">Painel</string>
+    <string name="menu_lembretes">Lembretes</string>
+    <string name="menu_compras">Compras</string>
+    <string name="menu_gastos">Gastos</string>
+    <string name="menu_verificar_agora">Verificar lembretes agora</string>
+    <string name="menu_sair">Sair</string>
+    <string name="sair_confirmacao">Deseja sair da sua conta?</string>
+    <string name="sessao_expirada">Sua sessão expirou. Entre novamente.</string>
+    <string name="verificando_lembretes">Verificando lembretes…</string>
+
+    <!-- Painel -->
+    <string name="painel_atrasados">Atrasados</string>
+    <string name="painel_hoje">Para hoje</string>
+    <string name="painel_contas_mes">Contas de %1$s</string>
+    <string name="painel_pago">Pago</string>
+    <string name="painel_pendente">Pendente</string>
+    <string name="painel_proximos">Próximos 7 dias</string>
+    <string name="painel_nada_proximo">Nada vencendo nos próximos 7 dias.</string>
+    <string name="painel_progresso_descricao">%1$d%% das contas do mês pagas</string>
+    <plurals name="painel_itens_compra">
+        <item quantity="one">%d item na lista de compras</item>
+        <item quantity="other">%d itens na lista de compras</item>
+    </plurals>
+
+    <!-- Lembretes -->
+    <string name="filtro_todos">Todos</string>
+    <string name="filtro_contas">Contas</string>
+    <string name="filtro_manutencao">Manutenção</string>
+    <string name="filtro_outros">Outros</string>
+    <string name="situacao_pendentes">Pendentes</string>
+    <string name="situacao_concluidos">Concluídos</string>
+    <plurals name="status_atrasado">
+        <item quantity="one">Atrasado há %d dia</item>
+        <item quantity="other">Atrasado há %d dias</item>
+    </plurals>
+    <string name="status_vence_hoje">Vence hoje</string>
+    <string name="lembretes_vazio_pendentes">Nenhum lembrete pendente por aqui.\nToque em + para criar um.</string>
+    <string name="lembretes_vazio_concluidos">Nenhum lembrete concluído ainda.</string>
+    <string name="concluido_em">Concluído em %1$s</string>
+    <string name="acao_novo_lembrete">Novo lembrete</string>
+    <string name="acao_concluir_lembrete">Concluir %1$s</string>
+    <string name="lembrete_concluido">Lembrete concluído.</string>
+    <string name="lembrete_concluido_proximo">Lembrete concluído. Próximo agendado para %1$s.</string>
+    <string name="conclusao_desfeita">O lembrete voltou para os pendentes.</string>
+    <string name="busca_lembretes">Buscar por título ou observação</string>
+    <string name="busca_sem_resultado">Nenhum lembrete encontrado para “%1$s”.</string>
+
+    <!-- Formulário de lembrete -->
+    <string name="form_titulo_novo">Novo lembrete</string>
+    <string name="form_titulo_editar">Editar lembrete</string>
+    <string name="campo_titulo">Título</string>
+    <string name="campo_categoria">Categoria</string>
+    <string name="categoria_conta">Conta</string>
+    <string name="categoria_manutencao">Manutenção</string>
+    <string name="categoria_outro">Outro</string>
+    <string name="campo_data">Data</string>
+    <string name="campo_valor">Valor</string>
+    <string name="campo_valor_opcional">Valor (opcional)</string>
+    <string name="prefixo_moeda">R$ </string>
+    <string name="campo_repetir">Repetir</string>
+    <string name="campo_intervalo">A cada (dias)</string>
+    <string name="ajuda_intervalo">A próxima data conta a partir do dia em que você concluir a manutenção.</string>
+    <string name="campo_observacao">Observação</string>
+    <string name="erro_valor_obrigatorio">Contas precisam de um valor</string>
+    <string name="erro_valor_invalido">Valor inválido</string>
+    <string name="erro_intervalo">Entre 1 e 3650</string>
+    <string name="selecionar_data">Data de vencimento</string>
+    <string name="excluir_lembrete_confirmacao">Excluir este lembrete?</string>
+    <string name="lembrete_salvo">Lembrete salvo.</string>
+    <string name="lembrete_excluido">Lembrete excluído.</string>
+
+    <!-- Recorrência: rótulo no formulário -->
+    <string name="recorrencia_nenhuma">Não repete (pontual)</string>
+    <string name="recorrencia_semanal">Toda semana</string>
+    <string name="recorrencia_mensal">Todo mês</string>
+    <string name="recorrencia_anual">Todo ano</string>
+    <string name="recorrencia_a_cada_n_dias">A cada N dias</string>
+    <!-- Recorrência: rótulo curto na lista -->
+    <string name="recorrencia_curta_nenhuma">Pontual</string>
+    <string name="recorrencia_curta_semanal">Semanal</string>
+    <string name="recorrencia_curta_mensal">Mensal</string>
+    <string name="recorrencia_curta_anual">Anual</string>
+    <plurals name="recorrencia_curta_a_cada_n_dias">
+        <item quantity="one">Todo dia</item>
+        <item quantity="other">A cada %d dias</item>
+    </plurals>
+
+    <!-- Compras -->
+    <string name="compras_titulo">Lista de compras</string>
+    <plurals name="compras_subtitulo">
+        <item quantity="one">%d item para comprar</item>
+        <item quantity="other">%d itens para comprar</item>
+    </plurals>
+    <string name="compras_tudo_comprado">Tudo comprado!</string>
+    <string name="campo_item">Item</string>
+    <string name="dica_item">Ex.: Detergente</string>
+    <string name="campo_quantidade">Qtd.</string>
+    <string name="acao_adicionar_item">Adicionar item</string>
+    <string name="compras_comprados">Comprados (%1$d)</string>
+    <string name="acao_limpar_comprados">Limpar comprados</string>
+    <string name="compras_vazio">Sua lista está vazia.\nAdicione o primeiro item acima.</string>
+    <string name="compras_dica">Toque e segure um item para editar ou excluir.</string>
+    <string name="quantidade_formato">× %1$d</string>
+    <string name="editar_item">Editar item</string>
+    <string name="item_excluido">Item excluído.</string>
+    <string name="comprados_removidos">Itens comprados removidos.</string>
+    <string name="item_restaurado">Item restaurado.</string>
+
+    <!-- Análise de gastos -->
+    <string name="gastos_titulo">Análise de gastos</string>
+    <string name="gastos_mes_anterior">Mês anterior</string>
+    <string name="gastos_mes_seguinte">Próximo mês</string>
+    <string name="gastos_total_mes">Total do mês</string>
+    <string name="gastos_variacao_alta">▲ %1$s%% em relação a %2$s</string>
+    <string name="gastos_variacao_queda">▼ %1$s%% em relação a %2$s</string>
+    <string name="gastos_variacao_igual">Igual a %1$s</string>
+    <string name="gastos_sem_comparacao">Sem gastos em %1$s para comparar</string>
+    <string name="gastos_media_e_lancamentos">Média mensal: %1$s · %2$s</string>
+    <plurals name="gastos_lancamentos">
+        <item quantity="one">%d lançamento no mês</item>
+        <item quantity="other">%d lançamentos no mês</item>
+    </plurals>
+    <string name="gastos_progresso_descricao">%1$d%% do mês já pago</string>
+    <string name="gastos_por_categoria">Por categoria</string>
+    <string name="gastos_maiores">Maiores gastos</string>
+    <plurals name="gastos_historico">
+        <item quantity="one">Último mês</item>
+        <item quantity="other">Últimos %d meses</item>
+    </plurals>
+    <string name="gastos_historico_dica">Toque em uma barra para abrir o mês.</string>
+    <string name="gastos_percentual">%1$d%%</string>
+    <string name="gastos_vazio">Nenhum gasto com valor em %1$s.\nContas e manutenções com valor aparecem aqui.</string>
+    <string name="gastos_item_descricao">%1$s: %2$s, %3$d%% do mês</string>
+
+    <!-- Notificações -->
+    <string name="canal_lembretes_nome">Lembretes da casa</string>
+    <string name="canal_lembretes_descricao">Avisos diários de contas, manutenções e outros lembretes.</string>
+    <string name="notificacao_titulo">Casa em Dia</string>
+    <plurals name="notificacao_hoje">
+        <item quantity="one">%d lembrete para hoje</item>
+        <item quantity="other">%d lembretes para hoje</item>
+    </plurals>
+    <plurals name="notificacao_atrasados">
+        <item quantity="one">%d atrasado</item>
+        <item quantity="other">%d atrasados</item>
+    </plurals>
+    <string name="notificacao_tudo_em_dia">Tudo em dia! Nenhum lembrete para hoje ou atrasado.</string>
+</resources>

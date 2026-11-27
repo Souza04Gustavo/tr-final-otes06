@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- T7 – Análise de gastos -->
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/atualizar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.gastos.GastosFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/conteudo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingBottom="16dp">
+
+            <!-- Seletor de mês -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/botao_mes_anterior"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/gastos_mes_anterior"
+                    android:src="@drawable/ic_seta_esquerda"
+                    app:tint="@color/texto" />
+
+                <TextView
+                    android:id="@+id/titulo_mes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:accessibilityLiveRegion="polite"
+                    android:gravity="center"
+                    android:textColor="@color/texto"
+                    android:textSize="17sp"
+                    android:fontFamily="sans-serif-medium"
+                    tools:text="Novembro de 2026" />
+
+                <ImageButton
+                    android:id="@+id/botao_mes_seguinte"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/gastos_mes_seguinte"
+                    android:src="@drawable/ic_seta_direita"
+                    app:tint="@color/texto" />
+            </LinearLayout>
+
+            <!-- Resumo do mês -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/gastos_total_mes"
+                        android:textAppearance="@style/TextAppearance.Casaemdia.Rotulo" />
+
+                    <TextView
+                        android:id="@+id/total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:textColor="@color/texto"
+                        android:textSize="32sp"
+                        android:fontFamily="sans-serif-medium"
+                        tools:text="R$ 1.570,70" />
+
+                    <TextView
+                        android:id="@+id/variacao"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="13sp"
+                        android:fontFamily="sans-serif-medium"
+                        tools:text="▲ 12,4% em relação a outubro"
+                        tools:textColor="@color/erro" />
+
+                    <com.google.android.material.progressindicator.LinearProgressIndicator
+                        android:id="@+id/progresso_pago"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:max="100"
+                        app:indicatorColor="@color/primaria"
+                        app:indicatorTrackGapSize="0dp"
+                        app:trackColor="@color/trilha_progresso"
+                        app:trackStopIndicatorSize="0dp"
+                        app:trackCornerRadius="@dimen/canto_pequeno"
+                        app:trackThickness="8dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/painel_pago"
+                                android:textColor="@color/texto_secundario"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/pago"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/primaria"
+                                android:textSize="16sp"
+                                android:fontFamily="sans-serif-medium"
+                                tools:text="R$ 1.286,30" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/painel_pendente"
+                                android:textColor="@color/texto_secundario"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/pendente"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/pendente"
+                                android:textSize="16sp"
+                                android:fontFamily="sans-serif-medium"
+                                tools:text="R$ 284,40" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/media"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:textColor="@color/texto_secundario"
+                        android:textSize="13sp"
+                        tools:text="Média mensal: R$ 1.412,00 · 4 lançamentos no mês" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/vazio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="12dp"
+                android:gravity="center"
+                android:paddingHorizontal="16dp"
+                android:textColor="@color/texto_secundario"
+                android:textSize="15sp"
+                android:visibility="gone"
+                tools:text="Nenhum gasto com valor em dezembro." />
+
+            <!-- Distribuição por categoria -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cartao_categorias"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:accessibilityHeading="true"
+                        android:text="@string/gastos_por_categoria"
+                        android:textAppearance="@style/TextAppearance.Casaemdia.Secao"
+                        tools:targetApi="p" />
+
+                    <br.udesc.casaemdia.ui.gastos.BarraSegmentadaView
+                        android:id="@+id/barra_categorias"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginBottom="6dp" />
+
+                    <LinearLayout
+                        android:id="@+id/lista_categorias"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Maiores gastos (barras horizontais ordenadas) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cartao_maiores"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:accessibilityHeading="true"
+                        android:text="@string/gastos_maiores"
+                        android:textAppearance="@style/TextAppearance.Casaemdia.Secao"
+                        tools:targetApi="p" />
+
+                    <LinearLayout
+                        android:id="@+id/lista_maiores"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:orientation="vertical" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Histórico dos últimos meses -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/titulo_historico"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:accessibilityHeading="true"
+                        android:textAppearance="@style/TextAppearance.Casaemdia.Secao"
+                        tools:targetApi="p"
+                        tools:text="Últimos 6 meses" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/gastos_historico_dica"
+                        android:textColor="@color/texto_secundario"
+                        android:textSize="12sp" />
+
+                    <br.udesc.casaemdia.ui.gastos.GraficoMensalView
+                        android:id="@+id/grafico_mensal"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

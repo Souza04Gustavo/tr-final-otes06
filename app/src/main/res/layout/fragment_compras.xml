@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- T6 – Lista de compras -->
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/atualizar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.compras.ComprasFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="16dp">
+
+            <!-- Adicionar item -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/campo_item"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="@string/campo_item"
+                        app:placeholderText="@string/dica_item">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/campo_item_texto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:imeOptions="actionNext"
+                            android:inputType="textCapSentences"
+                            android:maxLength="80" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/campo_quantidade"
+                        android:layout_width="72dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:hint="@string/campo_quantidade">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/campo_quantidade_texto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:imeOptions="actionDone"
+                            android:inputType="number"
+                            android:maxLength="4"
+                            android:text="1"
+                            tools:ignore="HardcodedText" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/botao_adicionar"
+                        style="@style/Widget.Casaemdia.BotaoIcone"
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        android:layout_marginStart="8dp"
+                        android:contentDescription="@string/acao_adicionar_item"
+                        app:icon="@drawable/ic_adicionar"
+                        app:iconSize="22dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Para comprar -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cartao_pendentes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/lista_pendentes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    tools:itemCount="4"
+                    tools:listitem="@layout/item_compra" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/vazio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:gravity="center"
+                android:paddingHorizontal="32dp"
+                android:text="@string/compras_vazio"
+                android:textColor="@color/texto_secundario"
+                android:textSize="15sp"
+                android:visibility="gone" />
+
+            <!-- Comprados -->
+            <LinearLayout
+                android:id="@+id/cabecalho_comprados"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="4dp"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/titulo_comprados"
+                    style="@style/TextAppearance.Casaemdia.Secao"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:accessibilityHeading="true"
+                    android:textColor="@color/texto_rotulo"
+                    tools:text="Comprados (2)" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/botao_limpar"
+                    style="@style/Widget.Material3.Button.TextButton.Icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/acao_limpar_comprados"
+                    app:icon="@drawable/ic_lixeira"
+                    app:iconSize="18dp" />
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cartao_comprados"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/lista_comprados"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/item_compra" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/dica"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/compras_dica"
+                android:textColor="@color/texto_secundario"
+                android:textSize="12sp"
+                android:visibility="gone" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

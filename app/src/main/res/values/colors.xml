@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Identidade visual do Casa em Dia: azul-anil em vários tons sobre superfícies frias e claras.
+    Os nomes descrevem a FUNÇÃO da cor (primaria, texto, pendente...), não o tom, para que o layout
+    não precise mudar se a paleta mudar. Contrastes de texto conferidos (WCAG ≥ 4,5:1).
+-->
+<resources>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Escala de azuis (do mais claro ao mais escuro) -->
+    <color name="azul_50">#FFF4F7FC</color>
+    <color name="azul_100">#FFE4ECF8</color>
+    <color name="azul_300">#FFA9C4EC</color>
+    <color name="azul_500">#FF3D78CC</color>
+    <color name="azul_600">#FF2A61B0</color>
+    <color name="azul_700">#FF1D4A8C</color>
+    <color name="azul_800">#FF163566</color>
+    <color name="azul_950">#FF0F1B2D</color>
+
+    <!-- Cor principal (botões, seleção, destaques) -->
+    <color name="primaria">@color/azul_700</color>
+    <color name="primaria_escura">@color/azul_800</color>
+    <color name="primaria_container">@color/azul_100</color>
+    <!-- Primária sobre fundo escuro (ex.: botão "Desfazer" da Snackbar) -->
+    <color name="primaria_sobre_escuro">@color/azul_300</color>
+
+    <!-- Superfícies e texto (neutros levemente azulados) -->
+    <color name="fundo">@color/azul_50</color>
+    <color name="superficie">#FFFFFFFF</color>
+    <color name="superficie_inversa">#FF2B3440</color>
+    <color name="texto">@color/azul_950</color>
+    <color name="texto_secundario">#FF56637A</color>
+    <color name="texto_rotulo">#FF34425A</color>
+    <color name="contorno">#FF8D99AD</color>
+    <color name="contorno_suave">#FFD7DEE8</color>
+    <color name="divisor">#FFE6EBF2</color>
+    <color name="trilha_progresso">#FFE4EAF3</color>
+    <color name="chip_quantidade">#FFEDF1F7</color>
+    <color name="circulo_concluir">#FF7F8CA3</color>
+
+    <!-- Status: sempre acompanhados de texto ou ícone, nunca só a cor -->
+    <color name="erro">#FFB42318</color>
+    <color name="erro_container">#FFFDEDEB</color>
+    <color name="erro_escuro">#FF8A1A12</color>
+    <color name="erro_contorno">#FFF4C5BF</color>
+    <!-- Valor ainda não pago -->
+    <color name="pendente">#FF9A5700</color>
+    <!-- Gasto menor que no mês anterior -->
+    <color name="sucesso">#FF1F7A4D</color>
+
+    <!-- Categorias: azul, âmbar e verde-azulado (validadas para daltonismo e contraste) -->
+    <color name="conta">@color/azul_600</color>
+    <color name="manutencao">#FFB25E09</color>
+    <color name="outro">#FF00897B</color>
+
+    <!-- Gráficos: o mês em destaque usa @color/primaria; os demais, este azul acinzentado -->
+    <color name="grafico_contexto">#FFC9D4E3</color>
+</resources>

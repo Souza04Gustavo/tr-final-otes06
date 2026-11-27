@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Abas da tela principal. Os ids coincidem com os itens de menu_navegacao.xml. -->
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nav_principal"
+    app:startDestination="@id/painelFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <fragment
+        android:id="@+id/painelFragment"
+        android:name="br.udesc.casaemdia.ui.painel.PainelFragment"
+        android:label="@string/menu_painel" />
+
+    <fragment
+        android:id="@+id/lembretesFragment"
+        android:name="br.udesc.casaemdia.ui.lembretes.LembretesFragment"
+        android:label="@string/menu_lembretes" />
+
+    <fragment
+        android:id="@+id/gastosFragment"
+        android:name="br.udesc.casaemdia.ui.gastos.GastosFragment"
+        android:label="@string/menu_gastos" />
+
+    <fragment
+        android:id="@+id/comprasFragment"
+        android:name="br.udesc.casaemdia.ui.compras.ComprasFragment"
+        android:label="@string/menu_compras" />
+</navigation>

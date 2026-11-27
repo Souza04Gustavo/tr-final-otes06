@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Item da lista de compras: tocar marca como comprado; tocar e segurar abre as opções -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:gravity="center_vertical"
+    android:minHeight="56dp"
+    android:orientation="horizontal"
+    android:paddingStart="8dp"
+    android:paddingEnd="16dp">
+
+    <!-- O clique é tratado pela linha inteira -->
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/marcador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:focusable="false"
+        android:importantForAccessibility="no" />
+
+    <TextView
+        android:id="@+id/nome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_weight="1"
+        android:textColor="@color/texto"
+        android:textSize="16sp"
+        tools:text="Detergente" />
+
+    <TextView
+        android:id="@+id/quantidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/bg_quantidade"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="4dp"
+        android:textColor="@color/texto_rotulo"
+        android:textSize="13sp"
+        android:fontFamily="sans-serif-medium"
+        tools:text="× 2" />
+</LinearLayout>
